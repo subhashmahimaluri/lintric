@@ -1,0 +1,36 @@
+{
+  "name": "lintric",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Lintric — AI-powered PR/code health assistant (mono-repo).",
+  "workspaces": [
+    "api",
+    "web",
+    "worker"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n WEB,API,WORKER \"npm:dev:web\" \"npm:dev:api\" \"npm:dev:worker\"",
+    "dev:web": "npm --prefix web run dev",
+    "dev:api": "npm --prefix api run start:dev",
+    "dev:worker": "npm --prefix worker run dev",
+    "build": "npm run build:api && npm run build:web && npm run build:worker",
+    "build:api": "npm --prefix api run build",
+    "build:web": "npm --prefix web run build",
+    "build:worker": "npm --prefix worker run build",
+    "lint": "npm:lint:web && npm:lint:api",
+    "lint:web": "npm --prefix web run lint",
+    "lint:api": "npm --prefix api run lint",
+    "format": "prettier -w \"**/*.{ts,tsx,js,json,md}\"",
+    "clean": "rimraf \"**/{dist,.next}\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0",
+    "prettier": "^3.3.3",
+    "rimraf": "^6.0.1"
+  },
+  "engines": {
+    "node": ">=20",
+    "npm": ">=9"
+  },
+  "license": "UNLICENSED"
+}
