@@ -1,0 +1,33 @@
+{
+  "name": "@lintric/worker",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Lintric background worker (AnalyzePR & SummarizePR)",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "node --enable-source-maps dist/index.js",
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@aws-sdk/client-sqs": "latest",
+    "@aws-sdk/client-s3": "latest",
+    "@aws-sdk/client-dynamodb": "latest",
+    "@aws-sdk/lib-dynamodb": "latest",
+    "express": "latest",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "tsx": "latest",
+    "typescript": "latest",
+    "vitest": "latest",
+    "@vitest/coverage-v8": "latest",
+    "@types/express": "latest",
+    "@types/node": "latest"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
