@@ -1,0 +1,41 @@
+{
+  "name": "@lintric/api",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Lintric API service (NestJS + TS)",
+  "scripts": {
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "build": "nest build",
+    "lint": "eslint 'src/**/*.ts'",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@nestjs/common": "latest",
+    "@nestjs/core": "latest",
+    "@nestjs/platform-express": "latest",
+    "@nestjs/config": "latest",
+    "reflect-metadata": "latest",
+    "rxjs": "latest",
+    "zod": "latest",
+    "aws-sdk": "latest",
+    "ioredis": "latest"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "latest",
+    "@nestjs/schematics": "latest",
+    "@nestjs/testing": "latest",
+    "typescript": "latest",
+    "ts-node": "latest",
+    "eslint": "latest",
+    "@typescript-eslint/eslint-plugin": "latest",
+    "@typescript-eslint/parser": "latest",
+    "vitest": "latest",
+    "@vitest/coverage-v8": "latest",
+    "supertest": "latest"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
